@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Image</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="display:flex; justify-content:center; align-items:center; height:100vh; margin:0;">
+  <img id="randomImage" style="max-width:90%; max-height:90%;" alt="Random Image">
+  
+  <script>
+    const imageLinks = [
+      "https://drive.google.com/uc?export=view&id=1W-P1y0XvPExRXm105XNZDfImZ1MT5cKv",
+      "https://drive.google.com/uc?export=view&id=1BTxgsIktMh6fm4RmmHwtPS8JisPCcTZy",
+      "https://drive.google.com/uc?export=view&id=1VZUrkt2Zs976PKyYrjSqEOInKIBKq327",
+      "https://drive.google.com/uc?export=view&id=1AC_Dt344WyAvPpCsvpzuGTzKol9VEr26",
+      "https://drive.google.com/uc?export=view&id=14aZhF0iCSBlaJrmH102VFTKgynJ3Ag5t",
+      "https://drive.google.com/uc?export=view&id=1c_yHgBgwPH_nKsf7R6BvSTlchvd_ebqF",
+      "https://drive.google.com/uc?export=view&id=1wpTCG84sXGc3LXkzoo_54hY8srP-Muov",
+      "https://drive.google.com/uc?export=view&id=1Nr3_vc-HwuNbZ3RKnHGy9LEDN5GEtvZP",
+      "https://drive.google.com/uc?export=view&id=1MIdW5kUGAm4fMid22IMYkHJINKBRJb5",
+      "https://drive.google.com/uc?export=view&id=1NmMHwNYO9Qo-mQ-wEQo8Q9CG3507sfF-",
+      "https://drive.google.com/uc?export=view&id=1NzD9VdIuOAG01S81GXg3mzH9K0SOjhZf",
+      "https://drive.google.com/uc?export=view&id=1hOEckYIiH6Df0Ok6BOttRdjt4hid8XEp",
+      "https://drive.google.com/uc?export=view&id=1s-sY8i8KLwdlldv6QOoaPI_nRqTt6MwU",
+      "https://drive.google.com/uc?export=view&id=1gHKu7dNzHZQiMRGl2_9pVShOtYnbrzx7"
+    ];
+
+    // Pick a random image and show it
+    const randomIndex = Math.floor(Math.random() * imageLinks.length);
+    document.getElementById("randomImage").src = imageLinks[randomIndex];
+  </script>
+</body>
+</html>
