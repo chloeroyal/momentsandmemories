@@ -1,59 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moments & Memories</title>
-
-<style>
-body{
-margin:0;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:black;
-}
-
-img{
-max-width:95%;
-max-height:95%;
-object-fit:contain;
-}
-</style>
-
-</head>
-
-<body>
-
-<img id="randomImage">
+<html>
+<body style="margin:0;background:#111;display:flex;justify-content:center;align-items:center;height:100vh;">
+<img id="pic" style="max-width:95%;max-height:95%;border-radius:12px;">
 
 <script>
-
 const images = [
 
-"https://drive.google.com/thumbnail?id=1W-P1y0XvPExRXm105XNZDfImZ1MT5cKv&sz=w2000",
-"https://drive.google.com/thumbnail?id=1BTxgsIktMh6fm4RmmHwtPS8JisPCcTZy&sz=w2000",
-"https://drive.google.com/thumbnail?id=1VZUrkt2Zs976PKyYrjSqEOInKIBKq327&sz=w2000",
-"https://drive.google.com/thumbnail?id=1AC_Dt344WyAvPpCsvpzuGTzKol9VEr26&sz=w2000",
-"https://drive.google.com/thumbnail?id=14aZhF0iCSBlaJrmH102VFTKgynJ3Ag5t&sz=w2000",
-"https://drive.google.com/thumbnail?id=1c_yHgBgwPH_nKsf7R6BvSTlchvd_ebqF&sz=w2000",
-"https://drive.google.com/thumbnail?id=1wpTCG84sXGc3LXkzoo_54hY8srP-Muov&sz=w2000",
-"https://drive.google.com/thumbnail?id=1Nr3_vc-HwuNbZ3RKnHGy9LEDN5GEtvZP&sz=w2000",
-"https://drive.google.com/thumbnail?id=1MIdW5kUGAm4fMid22IMYkHJINKBRJbB5&sz=w2000",
-"https://drive.google.com/thumbnail?id=1NmMHwNYO9Qo-mQ-wEQo8Q9CG3507sfF-&sz=w2000",
-"https://drive.google.com/thumbnail?id=1NzD9VdIuOAG01S81GXg3mzH9K0SOjhZf&sz=w2000",
-"https://drive.google.com/thumbnail?id=1hOEckYIiH6Df0Ok6BOttRdjt4hid8XEp&sz=w2000",
-"https://drive.google.com/thumbnail?id=1s-sY8i8KLwdlldv6QOoaPI_nRqTt6MwU&sz=w2000",
-"https://drive.google.com/thumbnail?id=1gHKu7dNzHZQiMRGl2_9pVShOtYnbrzx7&sz=w2000"
+"https://lh3.googleusercontent.com/d/1W-P1y0XvPExRXm105XNZDfImZ1MT5cKv",
+"https://lh3.googleusercontent.com/d/1BTxgsIktMh6fm4RmmHwtPS8JisPCcTZy",
+"https://lh3.googleusercontent.com/d/1VZUrkt2Zs976PKyYrjSqEOInKIBKq327",
+"https://lh3.googleusercontent.com/d/1AC_Dt344WyAvPpCsvpzuGTzKol9VEr26",
+"https://lh3.googleusercontent.com/d/14aZhF0iCSBlaJrmH102VFTKgynJ3Ag5t",
+"https://lh3.googleusercontent.com/d/1c_yHgBgwPH_nKsf7R6BvSTlchvd_ebqF",
+"https://lh3.googleusercontent.com/d/1wpTCG84sXGc3LXkzoo_54hY8srP-Muov",
+"https://lh3.googleusercontent.com/d/1Nr3_vc-HwuNbZ3RKnHGy9LEDN5GEtvZP",
+"https://lh3.googleusercontent.com/d/1MIdW5kUGAm4fMid22IMYkHJINKBRJbB5",
+"https://lh3.googleusercontent.com/d/1NmMHwNYO9Qo-mQ-wEQo8Q9CG3507sfF-",
+"https://lh3.googleusercontent.com/d/1NzD9VdIuOAG01S81GXg3mzH9K0SOjhZf",
+"https://lh3.googleusercontent.com/d/1hOEckYIiH6Df0Ok6BOttRdjt4hid8XEp",
+"https://lh3.googleusercontent.com/d/1s-sY8i8KLwdlldv6QOoaPI_nRqTt6MwU",
+"https://lh3.googleusercontent.com/d/1gHKu7dNzHZQiMRGl2_9pVShOtYnbrzx7"
 
 ];
 
-const randomImage = images[Math.floor(Math.random() * images.length)];
+let i = localStorage.getItem("imgIndex") || 0;
+i = parseInt(i);
 
-document.getElementById("randomImage").src = randomImage;
+document.getElementById("pic").src = images[i % images.length];
+
+localStorage.setItem("imgIndex", i + 1);
 
 </script>
-
 </body>
 </html>
